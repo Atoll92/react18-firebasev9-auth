@@ -6,6 +6,9 @@ import { getFirestore } from 'firebase/firestore'
 import { doc, getDoc } from "firebase/firestore";
 import { useState } from 'react'
 import { useUserAuth } from '../context/userAuthContext'
+// import fetchAll from './FetchAll'
+// const fetchAll = require("./FetchAll")
+
 
 function Monitor() {
     const { logOut, user, loading } = useUserAuth();
@@ -73,6 +76,7 @@ function Monitor() {
 
     return (
         <div>
+            {/* <button onClick={fetchAll}>fetch all</button> */}
             <h1>Monitor
 
             </h1>
