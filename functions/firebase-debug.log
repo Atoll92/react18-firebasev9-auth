@@ -1,0 +1,66 @@
+[debug] [2023-03-02T22:16:16.312Z] ----------------------------------------------------------------------
+[debug] [2023-03-02T22:16:16.313Z] Command:       /opt/homebrew/Cellar/node/19.4.0_1/bin/node /opt/homebrew/bin/firebase functions:shell
+[debug] [2023-03-02T22:16:16.313Z] CLI Version:   11.24.0
+[debug] [2023-03-02T22:16:16.313Z] Platform:      darwin
+[debug] [2023-03-02T22:16:16.314Z] Node Version:  v19.4.0
+[debug] [2023-03-02T22:16:16.314Z] Time:          Thu Mar 02 2023 23:16:16 GMT+0100 (Central European Standard Time)
+[debug] [2023-03-02T22:16:16.314Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-02T22:16:16.349Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-02T22:16:16.349Z] > authorizing via signed-in user (arthur.boval@gmail.com)
+[debug] [2023-03-02T22:16:16.349Z] [iam] checking project dg-services-52b9c for permissions ["firebase.projects.get"]
+[debug] [2023-03-02T22:16:16.350Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dg-services-52b9c:testIamPermissions [none]
+[debug] [2023-03-02T22:16:16.350Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dg-services-52b9c:testIamPermissions x-goog-quota-user=projects/dg-services-52b9c
+[debug] [2023-03-02T22:16:16.351Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dg-services-52b9c:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-03-02T22:16:17.125Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dg-services-52b9c:testIamPermissions 200
+[debug] [2023-03-02T22:16:17.125Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dg-services-52b9c:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-03-02T22:16:17.240Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-02T22:16:17.241Z] defaultcredentials: writing to file /Users/arthur/.config/firebase/arthur_boval_gmail.com_application_default_credentials.json
+[debug] [2023-03-02T22:16:17.242Z] DEBUG: Setting GAC to /Users/arthur/.config/firebase/arthur_boval_gmail.com_application_default_credentials.json
+[debug] [2023-03-02T22:16:17.242Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dg-services-52b9c/adminSdkConfig [none]
+[debug] [2023-03-02T22:16:17.810Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dg-services-52b9c/adminSdkConfig 200
+[debug] [2023-03-02T22:16:17.810Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dg-services-52b9c/adminSdkConfig {"projectId":"dg-services-52b9c","storageBucket":"dg-services-52b9c.appspot.com"}
+[debug] [2023-03-02T22:16:17.822Z] [functions] Watching "/Users/arthur/dev/DG360/react18-firebasev9-auth/functions" for Cloud Functions...
+[debug] [2023-03-02T22:16:17.827Z] Validating nodejs source
+[debug] [2023-03-02T22:16:18.302Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T22:16:18.302Z] Building nodejs source
+[debug] [2023-03-02T22:16:18.302Z] Failed to find version of module node: reached end of search path /Users/arthur/dev/DG360/react18-firebasev9-auth/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "16" doesn't match your global version "19". Using node@19 from host. 
+[debug] [2023-03-02T22:16:18.305Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T22:16:18.308Z] Found firebase-functions binary at '/Users/arthur/dev/DG360/react18-firebasev9-auth/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T22:16:18.423Z] Serving at port 8200
+
+[debug] [2023-03-02T22:16:18.555Z] Got response from /__/functions.yaml {"endpoints":{"addMessage":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"addMessage"},"scheduledFunction":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"scheduleTrigger":{"schedule":"every 1 minutes","retryConfig":{"retryCount":null,"maxDoublings":null,"maxRetryDuration":null,"maxBackoffDuration":null,"minBackoffDuration":null},"timeZone":null},"labels":{},"entryPoint":"scheduledFunction"},"detectLoginActivity":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","eventFilters":{"resource":"projects/dg-services-52b9c/databases/(default)/documents/users/{userId}"},"retry":false},"labels":{},"entryPoint":"detectLoginActivity"},"detectAnyChangeToUsers":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","eventFilters":{"resource":"projects/dg-services-52b9c/databases/(default)/documents/users/{userId}"},"retry":false},"labels":{},"entryPoint":"detectAnyChangeToUsers"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}]}
+[debug] [2023-03-02T22:16:18.559Z] shutdown requested via /__/quitquitquit
+
+[debug] [2023-03-02T22:16:18.563Z] [functions] Loaded functions definitions from source: addMessage, scheduledFunction, detectLoginActivity, detectAnyChangeToUsers.
+[debug] [2023-03-02T22:16:18.563Z] [functions[us-central1-addMessage]] http function initialized (http://127.0.0.1:5000/dg-services-52b9c/us-central1/addMessage).
+[debug] [2023-03-02T22:16:18.563Z] [functions[us-central1-scheduledFunction]] function ignored because the pubsub emulator does not exist or is not running.
+[debug] [2023-03-02T22:16:18.563Z] [functions[us-central1-detectLoginActivity]] function ignored because the firestore emulator does not exist or is not running.
+[debug] [2023-03-02T22:16:18.563Z] [functions[us-central1-detectAnyChangeToUsers]] function ignored because the firestore emulator does not exist or is not running.
+[info] i  functions: Loaded functions: addMessage, scheduledFunction, detectLoginActivity, detectAnyChangeToUsers 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub, storage, eventarc 
