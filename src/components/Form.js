@@ -98,6 +98,8 @@ async function reg(data)  {
             <p>Add new domain to monitor:</p>
           {/* register your input into the hook by invoking the "register" function */}
           <input defaultValue="mydomain.com" {...register("domain_name" , { required: true })} />
+
+          
           
           {/* include validation with required or other standard HTML validation rules */}
           {/* <input {...register("exampleRequired", { required: true })} /> */}
