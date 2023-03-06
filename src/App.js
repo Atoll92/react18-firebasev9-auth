@@ -9,7 +9,7 @@ import Monitor from "./components/Monitor";
 
 function App() {
   return (
-    <Container style={{ width: "400px" }}>
+    <Container style={{ width: "100vw" }}>
       <Row>
         <Col>
           <UserAuthContextProvider>

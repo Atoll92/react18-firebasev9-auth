@@ -8,6 +8,10 @@ import { useState } from 'react';
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+// const isDomainValid = require('../');
+import isDomainValid from 'is-domain-valid';
+import checkmark from '../img/icons8-done.svg'
+import warning from '../img/warning-sign-svgrepo-com.svg'
 
 const db = getFirestore(app);
 
@@ -72,17 +76,55 @@ const db = getFirestore(app);
     //     console.log("no list ")
         
     // }
+function checkDomainValidity(domainname) {
 
+ 
+    const res = isDomainValid(domainname);
+    if (res.result) {
+      return (   <img style={{width:"50px"}} src={checkmark} alt="checkmark" />);
+    } else {
+      return ( <span><img style={{width:"50px"}} src={warning} alt="warning" /> {res.message}</span>);
+    }
+}
+
+async function getDomainStatus() {
+    // With .then and .catch section
+    // let response = await fetch("https://" + domainname, {
+        let response = await fetch("https://google.fr", {
+      method: "GET", // *Type of request GET, POST, PUT, DELETE
+      mode: "no-cors", // Type of mode of the request
+      cache: "no-cache", // options like default, no-cache, reload, force-cache
+      credentials: "same-origin", // options like include, *same-origin, omit
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+        // "Content-Type": "application/json" // request content type
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *client
+      // body: JSON.stringify(data) // Attach body with the request
+    });
+
+    
+    
+      this.then(response => {
+        // console.log(domainname + response.json());
+        console.log( response.json());
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+getDomainStatus()
 
     if (newlist) {
     return (
         <div>
-            <h1>My domains</h1>
+            <h1>My domainss</h1>
             
             <ul> {newlist.map((domain, index) => (
-                
-        <li key={index}>{domain.domain_name}</li> 
-
+        <li key={index}><b>{domain.domain_name}</b><br></br> {checkDomainValidity(domain.domain_name)}<br></br></li> 
+       
+        // { getDomainStatus(domain.domain_name)}
        
     ))}</ul>
 
